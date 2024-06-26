@@ -29,7 +29,8 @@
                     <p>{{ task.text }}</p>
                     <div>
                         <button @click="done(index)">[ ]</button>
-                        <button @click="delete(index)">x</button>
+                        
+                        <button @click="deleteTask(index)">x</button>
                     </div>
                 </li>
             </ul>

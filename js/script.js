@@ -23,6 +23,14 @@ createApp({
                     text: 'compra latte',
                     check: false,
                 },
+                {
+                    text: 'compra feta',
+                    check: true,
+                },
+                {
+                    text: 'compra pane',
+                    check: false,
+                },
             ],
 
             // input txt
@@ -53,14 +61,20 @@ createApp({
             console.log(index)
             if(this.toDos[index].check === false){
                 this.toDos[index].check = true;
+
             }else{
                 this.toDos[index].check = false;
             }
             console.log(this.toDos[index].check);
         },
 
-        delete(index){
+        deleteTask(index){
+            console.log("delete()", index);
             this.toDos.splice(index, 1);
+
+            console.log("delete()", this.todDos);
+
+            
         }
     },
     mounted(){
