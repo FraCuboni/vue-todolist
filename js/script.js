@@ -20,7 +20,7 @@ createApp({
             // todo-data
             toDos: [
                 {
-                    text: 'compra a',
+                    text: 'compra latte',
                     check: false,
                 },
             ],
@@ -47,11 +47,20 @@ createApp({
             this.userTodo='';
 
             console.log(this.toDos);
-        }
+        },
 
-        Done(){
+        done(index){
+            console.log(index)
+            if(this.toDos[index].check === false){
+                this.toDos[index].check = true;
+            }else{
+                this.toDos[index].check = false;
+            }
+            console.log(this.toDos[index].check);
+        },
 
-            
+        delete(index){
+            this.toDos.splice(index, 1);
         }
     },
     mounted(){

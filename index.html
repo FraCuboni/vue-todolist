@@ -25,8 +25,12 @@
 
         <main>
             <ul>
-                <li v-for="task in toDos">
-                    {{task.text}}
+                <li v-for="(task, index) in toDos" :key="index">
+                    <p>{{ task.text }}</p>
+                    <div>
+                        <button @click="done(index)">[ ]</button>
+                        <button @click="delete(index)">x</button>
+                    </div>
                 </li>
             </ul>
         </main>
