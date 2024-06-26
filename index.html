@@ -13,22 +13,21 @@
 </head>
 <body>
 
-    <div class="container">
+    <div id="app">
 
         <header>
             <h1>TO DO</h1>
         </header>
-
         <nav>
-            <input type="text" name="" id="">
-            <button>manna</button>
+            <input type="text" name="" id="" v-model="userTodo">
+            <button @click="addTask">manna</button>
         </nav>
 
         <main>
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li v-for="task in toDos">
+                    {{task.text}}
+                </li>
             </ul>
         </main>
 

@@ -11,9 +11,6 @@
 // Predisporre un campo di input testuale e un pulsante “aggiungi”: cliccando sul pulsante, il testo digitato viene letto e utilizzato per creare un nuovo todo, che quindi viene aggiunto alla lista dei todo esistenti.
 
 
-
-
-
 const { createApp } = Vue;
 
 createApp({
@@ -23,29 +20,40 @@ createApp({
             // todo-data
             toDos: [
                 {
-                    text: '',
+                    text: 'compra a',
                     check: false,
                 },
-                {
-                    text: '',
-                    check: false,
-                },
-                {
-                    text: '',
-                    check: false,
-                },
-                {
-                    text: '',
-                    check: false,
-                },
-                {
-                    text: '',
-                    check: false,
-                }
             ],
+
+            // input txt
+            userTodo : '',
 
         };
     },
     methods: {
+        // funzione per creare un nuovo array e pushare dentro il to do dell'utente
+        addTask(){
+
+            // creo la variabile oggetto con i dati forniti
+            let newTask = {
+                text: this.userTodo,
+                check: false,
+            };
+
+            // pusho l'oggetto
+            this.toDos.unshift(newTask);
+
+            // pulisco l'input
+            this.userTodo='';
+
+            console.log(this.toDos);
+        }
+
+        Done(){
+
+            
+        }
+    },
+    mounted(){
     }
-}).mount('#container');
+}).mount('#app');
